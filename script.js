@@ -95,3 +95,23 @@ function byProperty(property, direction) {
   console.log(movies.sort(byProperty('runningTimeInMinutes', '<')));
   console.log(movies.sort(byProperty('movieName', '>')));
 
+Задача номер 2
+  function someFunction(arg1, arg2) {
+    // Довільна функція, яка робить щось з аргументами
+    return arg1 + arg2;
+  }
+  
+  function slower(func, seconds) {
+    return function (...args) {
+      console.log(`Chill out, you will get your result in ${seconds} seconds`);
+      setTimeout(() => {
+        const result = func(...args);
+        console.log('Result:', result);
+      }, seconds * 1000);
+    };
+  }
+  
+  let slowedSomeFunction = slower(someFunction, 5);
+  
+  slowedSomeFunction(2, 3);
+  
