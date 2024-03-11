@@ -1,5 +1,5 @@
 "use strict"
-function durationBetweenDates(startDate, endDate, dimension = 'days') {
+/*function durationBetweenDates(startDate, endDate, dimension = 'days') {
     const start = new Date(startDate);
     const end = new Date(endDate);
 
@@ -40,5 +40,58 @@ function filterUnique(array) {
     return [...new Set(array)].map(value => value);
 }
 
+//console.log(filterUnique(userNames)); // ['Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
+*/
+//Напишіть функцію 
+//яка буде використовуватись для сортування масиву фільмів
 
-console.log(filterUnique(userNames)); // ['Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
+const movies = [
+	{
+		movieName: 'The Thing',
+		releaseYear: 1982,
+		directedBy: 'Carpenter',
+		runningTimeInMinutes: 109,
+	},
+	{
+		movieName: 'Aliens',
+		releaseYear: 1986,
+		directedBy: 'Cameron',
+		runningTimeInMinutes: 137,
+	},
+	{
+		movieName: 'Men in Black',
+		releaseYear: 1997,
+		directedBy: 'Sonnenfeld',
+		runningTimeInMinutes: 98,
+	},
+	{
+		movieName: 'Predator',
+		releaseYear: 1987,
+		directedBy: 'McTiernan',
+		runningTimeInMinutes: 107,
+	},
+];
+
+
+function byProperty(property, direction) {
+    return function (a, b) {
+      let comparison = 0;
+  
+      if (a[property] > b[property]) {
+        comparison = 1;
+      } else if (a[property] < b[property]) {
+        comparison = -1;
+      }
+  
+      if (direction === '>') {
+        return comparison;
+      } else {
+        return -comparison;
+      }
+    };
+  }
+  
+  console.log(movies.sort(byProperty('releaseYear', '>')));
+  console.log(movies.sort(byProperty('runningTimeInMinutes', '<')));
+  console.log(movies.sort(byProperty('movieName', '>')));
+
