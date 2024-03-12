@@ -1,4 +1,5 @@
 "use strict"
+//задача 1
 function durationBetweenDates(startDate, endDate, dimension = 'days') {
     const start = new Date(startDate);
     const end = new Date(endDate);
@@ -41,6 +42,3 @@ function filterUnique(array) {
 }
 
 //console.log(filterUnique(userNames)); // ['Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
-*/
-//Напишіть функцію 
-//яка буде використовуватись для сортування масиву фільмів
